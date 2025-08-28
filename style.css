@@ -1,33 +1,54 @@
+:root {
+  --sidebarColor: #bec5ad;
+  --mainFraimColor: #a4b494;
+  --cardBG: #385349;
+  --detailsDark: #bec5ad;
+  --detailsLight: #519872;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: Quicksand;
   box-sizing: border-box;
+  font-weight: 500;
 }
 svg {
   width: 28px;
 }
 #main {
   display: grid;
-  grid-template-columns: 1fr 8fr;
+  grid-template-columns: 1fr 10fr;
+  width: 100%;
+  height: 100%;
 }
 #sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--sidebarColor);
+  padding: 2em;
+
   :first-child {
     font-weight: 800;
     font-size: 26px;
     display: flex;
     gap: 0.3em;
+    margin-bottom: 1rem;
   }
 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: cornflowerblue;
-  padding: 2em;
+  svg {
+    width: 38px;
+  }
 }
 
 #frontPage {
-  padding: 2em;
-  background-color: burlywood;
+  padding: 1.2em;
+  background-color: var(--mainFraimColor);
   min-width: 300px;
 }
 
@@ -35,7 +56,11 @@ svg {
   display: grid;
   grid-template-rows: 1fr 2fr;
   gap: 2em;
-  background-color: aqua;
+  background-color: var(--cardBG);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  box-shadow: 1px 1px 3px rgb(116, 116, 116);
+
   img {
     width: 2em;
     border-radius: 50%;
@@ -88,34 +113,38 @@ svg {
     border-radius: 30px;
     box-shadow: 1px 1px 3px rgb(116, 116, 116);
     padding: 8px;
-    background-color: blueviolet;
+    background-color: var(--detailsLight);
   }
 }
 
 #cardsAndMore {
   margin-top: 2em;
   display: grid;
-  grid-template-columns: 7fr 4fr;
+  grid-template-columns: 14fr 9fr;
   grid-template-rows: 1fr 1fr;
   justify-content: space-evenly;
 
   .projects {
     grid-column: 1/2;
     grid-row: 1/3;
+    height: fit-content;
   }
 
   .cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 1em;
+    font-size: 14px;
   }
 
   .card {
     display: grid;
     grid-template-rows: 3fr 1fr;
-    outline: 2px red solid;
     padding: 1.4em;
     min-width: 100px;
+    background-color: var(--cardBG);
+    border-radius: 12px;
+    box-shadow: 1px 1px 3px rgb(95, 95, 95);
 
     :first-child {
       display: flex;
@@ -130,24 +159,76 @@ svg {
     }
   }
 
+  .card > div > div:first-child {
+    font-size: 16px;
+    font-weight: 700;
+  }
   .announces {
-    outline: 2px violet dotted;
-    padding: 0 3em;
-
+    margin: 0 1.5rem;
+    padding: 0 1em 1em 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: var(--cardBG);
+    border-radius: 12px;
+    box-shadow: 1px 1px 3px rgb(95, 95, 95);
 
-    p{
-      margin-bottom: 2em;
+    > div {
+      margin: 0.5em;
     }
 
     div:first-child {
       font-weight: 900;
-      margin-top: 1em;
-      margin-bottom: 0.2em;
+      margin-bottom: 0.3em;
+      font-size: 15px;
+    }
+
+    hr {
+      width: 100%;
+      margin: 1em 0;
+      border: 1px solid rgb(53, 53, 53);
     }
   }
+}
 
+.feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: space-evenly;
+  height: fit-content;
+  background-color: var(--cardBG);
+  border-radius: 12px;
+  margin: 1.5em;
+  padding: 0 1em 1em 1em;
+  box-shadow: 1px 1px 3px rgb(95, 95, 95);
+}
 
+.feed > div {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 0.8em;
+  padding: 0 2em;
+
+  img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    grid-column: 1/2;
+  }
+
+  img + div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 14.5px;
+
+    :first-child {
+      font-weight: 800;
+      font-size: 14px;
+    }
+  }
 }
