@@ -25,15 +25,17 @@ const lightColorPallet = {
   "--mainFraimColor": "#a4b494",
   "--cardBG": "#446458",
   "--btn": "#bec5ad",
-  "--eyeHover": "#95d5b2",
-  "--gitHover": "#52b69a",
+  "--eyeHover": "#138522ff",
+  "--gitHover": "#5e0066",
+  "--textColor": "black",
 };
 
 const darkColorPallet = {
-  "--sidebarColor": "#23465cff",
-  "--mainFraimColor": "#425d5fff",
-  "--cardBG": "#8dab7f",
-  "--btn": "#435037ff",
-  "--eyeHover": "#cfee9e",
-  "--gitHover": "#926c15",
+  "--sidebarColor": "#222831",
+  "--mainFraimColor": "#31363F",
+  "--cardBG": "#76ABAE",
+  "--btn": "#F87666",
+  "--eyeHover": "#D0BCD5",
+  "--gitHover": "#fdbe2aff",
+  "--textColor": "white",
 };
